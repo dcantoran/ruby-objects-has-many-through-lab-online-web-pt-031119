@@ -11,4 +11,19 @@ class Doctor
     @@all 
   end 
   
+  # date, patient, doctor <-- arguments order
+  
+  def new_appointment(date, patient)
+    appt = Appointment.new(date, patient, self)
+    appt 
+  end 
+  
+  def appointments 
+    Appointment.all.select {|appt| appt.doctor == self}
+  end 
+  
+  def patients 
+    Appointment.all.collect {|appt| appt.patient}
+  end 
+  
 end 
