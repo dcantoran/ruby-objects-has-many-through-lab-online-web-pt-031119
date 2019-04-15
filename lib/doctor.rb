@@ -15,7 +15,7 @@ class Doctor
   # date, patient, doctor <-- arguments order
   
   def new_appointment(date, patient)
-    appt = Appointment.new(date, patient, self)
+    appt = Appointment.new(patient, date, self)
     appt 
   end 
   
